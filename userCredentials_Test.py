@@ -33,3 +33,27 @@ class TestUserCredentials(unittest.TestCase):
         self.new_userCred.save_userCred()
         self.assertEqual(len(UserCredentials.userCred_list),1)
 
+
+def test_saving_multiple_userCreds(self):
+    """
+    test to check if we can save multiple user credentials to our list
+    """
+    self.new_userCred.save_userCred()
+    test_userCred = UserCredentials ("Facebook", "user", "password")
+    test_userCred.save_userCred()
+    self.assertEqual(len(UserCredentials.userCred_list),2)
+
+    # deleting userCredentials
+
+def test_delete_userCredentials(self):
+    """
+    case to test if we can delete userCredentials
+    """
+    self.new_userCred.save_userCred()
+    test_userCred = UserCredentials ("Facebook", "user", "password")
+    test_userCred.save_userCred()
+    self.new_userCred.delete_userCred()
+    self.assertEqual(len(UserCredentials.userCred_list), 1)
+
+
+    # searching userCredentials
