@@ -20,11 +20,9 @@ def save_userCredentials(userCredentials):
     
     userCredentials.save_userCredentials
 
-    #Find user
+def search_user(username):
 
-def find_user(username):
-
-    return User.find_user(username)
+    return User.search_user(username)
 
 def create_userCredentials(account, email, password):
     """
@@ -45,9 +43,9 @@ def display_userCred():
     '''
     return UserCredentials.display_userCred()
 
-def find_account(account):
+def search_account(account):
 
-    return UserCredentials.find_account(account)
+    return UserCredentials.search_account(account)
 
 def delete_userCred(account):
 
@@ -82,7 +80,7 @@ def main():
             print ('\n')
             print ('\n')
            
-            print("Use these codes: 'ca' to Create a new Account, 'da' to Display Account, 'fa' to Find Account, 'gp' to Generate a Password, 'ex' to exit")
+            print("Use these codes: 'ca' to Create a new Account, 'da' to Display Account, 'fa' to search Account, 'gp' to Generate a Password, 'ex' to exit")
             print ('\n')
 
         elif short_code == "ca":
@@ -133,20 +131,31 @@ def main():
             else: 
                 print ('\n')
                 print("You do not have any accounts saved")
-       elif short_code == "fa":
+
+        elif short_code == "fa":
                 print("Key the name of the account you are looking for: ")
                 search_userCred = input()
-                if find_account(search_userCred):
-                    search_acc = find_account(search_userCred)
+                if search_account(search_userCred):
+                    search_acc = search_account(search_userCred)
                     print(f"{search_acc.account} {search_acc.email} {search_acc.password}")
-                else: print("Account does not exist!")   
-        
-                elif short_code == "gp":
-                    letters= "any"
+                else: print("Account does not exist!")
+
+        elif short_code == "gp":
+                letters= "any"
                 how_many = len(letters)
                 print("How long would you like your password to be? ")
                 print(f"p.s: Maximum length of your password is {how_many}")
                 lent = int(input())
                 password = "" .join(random.sample(letters, lent))
                 print(f"Your password has {lent} characters ")
-                print(password)                    
+                print(password)
+
+        elif short_code == "ex":
+            print("logging out...")
+            print ('\n')
+            print("logged out")
+            print ('\n')
+            break
+                    
+        else:
+            print("Invalid inputs, please  use these short codes : 'ca' to create a new account, 'da' to display accounts, 'fa' to search an account, 'de' to delete account , 'gp' to generate a random password and 'ex' t0 logout")
