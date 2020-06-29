@@ -57,3 +57,14 @@ def test_delete_userCredentials(self):
 
 
     # searching userCredentials
+def test_search_for_userCred(self):
+    """
+    case to test if we can search for credentials
+    """
+    self.new_userCred.save_userCred()
+    test_userCred = UserCredentials ("Facebook", "user", "password")
+    test_userCred.save_userCred()
+    find_userCred = UserCredentials.find_account("Facebook")
+    self.assertEqual(find_userCred.account, test_userCred.account)
+
+    # test to check if account exist
