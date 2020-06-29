@@ -124,3 +124,13 @@ def main():
 
             else:
                 print("I did not capture that. Please use shortcode 'ca' and start again")
+
+        elif short_code == "da":
+            print(f"These are the credentials for {name}:")
+            print ('\n')
+            for userCred in display_userCred():
+                    print(f"{userCred.account}\n {userCred.email}\n {userCred.password}")
+            else: 
+                print ('\n')
+                print("You do not have any accounts saved")
+                
