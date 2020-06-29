@@ -108,3 +108,19 @@ def main():
                 print ('\n')
                 print ("Use the short code 'ca' to create a new account")
                 print ('\n')
+            elif input() == "no":
+                print ("password: ")
+                password = input()
+                save_userCred(create_userCredentials(account, email, password))
+                print ('\n')
+                print("Use these short codes: 'ca' to create a new account")
+                print ('\n')
+
+                save_user(create_userCredentials(account, email, password))
+                save_userCred(create_userCredentials(account, email, password))
+                print('\n')
+                print(f"New User {account} {email} created")
+                print('\n')
+
+            else:
+                print("I did not capture that. Please use shortcode 'ca' and start again")
