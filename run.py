@@ -139,4 +139,14 @@ def main():
                 if find_account(search_userCred):
                     search_acc = find_account(search_userCred)
                     print(f"{search_acc.account} {search_acc.email} {search_acc.password}")
-                else: print("Account does not exist!")               
+                else: print("Account does not exist!")   
+        
+                elif short_code == "gp":
+                    letters= "any"
+                how_many = len(letters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of your password is {how_many}")
+                lent = int(input())
+                password = "" .join(random.sample(letters, lent))
+                print(f"Your password has {lent} characters ")
+                print(password)                    
