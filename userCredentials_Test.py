@@ -64,15 +64,15 @@ def test_search_for_userCred(self):
     self.new_userCred.save_userCred()
     test_userCred = UserCredentials ("Facebook", "user", "password")
     test_userCred.save_userCred()
-    find_userCred = UserCredentials.find_account("Facebook")
-    self.assertEqual(find_userCred.account, test_userCred.account)
+    search_userCred = UserCredentials.search_account("Facebook")
+    self.assertEqual(search_userCred.account, test_userCred.account)
 
     # test to check if account exist
   
   
 def test_confirm_userCred_exists(self):
     """
-    test to check if we can return a Boolean if we cannot find the account
+    test to check if we can return a Boolean if we cannot search the account
     """
 
     self.new_userCred.save_userCred()

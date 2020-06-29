@@ -21,9 +21,9 @@ class User:
 
 
     @classmethod
-    def find_user(cls, username):
+    def search_user(cls, username):
         '''
-        find username using search terms
+        search username using search terms
         '''
         for user in cls.user_list:
             if user.username == username:

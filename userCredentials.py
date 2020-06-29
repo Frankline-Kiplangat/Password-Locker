@@ -33,7 +33,7 @@ class UserCredentials:
         # searching for credentials
 
     @classmethod
-    def find_account(cls, account):
+    def search_account(cls, account):
         """
         search for accounts
         """
@@ -64,6 +64,6 @@ class UserCredentials:
 
     @classmethod
     def copy_password(cls, password):
-            find_account = UserCredentials.find_account(password)
-            pyperclip.copy(find_account.password)
+            search_account = UserCredentials.search_account(password)
+            pyperclip.copy(search_account.password)
 
