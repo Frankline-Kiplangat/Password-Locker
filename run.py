@@ -133,4 +133,10 @@ def main():
             else: 
                 print ('\n')
                 print("You do not have any accounts saved")
-                
+       elif short_code == "fa":
+                print("Key the name of the account you are looking for: ")
+                search_userCred = input()
+                if find_account(search_userCred):
+                    search_acc = find_account(search_userCred)
+                    print(f"{search_acc.account} {search_acc.email} {search_acc.password}")
+                else: print("Account does not exist!")               
