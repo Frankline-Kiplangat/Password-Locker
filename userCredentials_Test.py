@@ -68,3 +68,38 @@ def test_search_for_userCred(self):
     self.assertEqual(find_userCred.account, test_userCred.account)
 
     # test to check if account exist
+  
+  
+def test_confirm_userCred_exists(self):
+    """
+    test to check if we can return a Boolean if we cannot find the account
+    """
+
+    self.new_userCred.save_userCred()
+    test_userCred = UserCredentials ("Facebook", "user", "password")
+    test_userCred.save_userCred()
+    userCred_exists = UserCredentials.userCred_exists("Facebook")
+    self.asserTrue(userCred_exists)
+
+
+    # Display all credentials
+
+
+def test_display_userCredentials(self):
+    """
+    returns a list of all credentials saved
+    """
+    self.assertEqual(UserCredentials.display_userCred(), UserCredentials.userCred_list)
+
+
+
+    # copy UserCredentials
+
+def test_copy_password(self):
+    """
+    case to test if the generated password can be copied to clipborad
+    """
+    self.new_userCred.save_userCred()
+    UserCredentials.copy_password("frankdux@1234")
+    self.assertEqual(self.new_userCred.password, pyperclip.paste())
+  
