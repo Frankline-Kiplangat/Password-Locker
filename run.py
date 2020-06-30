@@ -52,7 +52,7 @@ def delete_userCred(account):
     account.delete_userCred()
 
 def main():
-    print("Hey There!, Enter your name: ")
+    print("Hey There! Welcome. Enter your name: ")
     name = input ()
     print(f"{name}, Sign up to continue")
     print('\n')
