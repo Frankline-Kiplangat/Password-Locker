@@ -2,11 +2,12 @@ class User:
 
     user_list = []
 
-    def __init__(self, username, password):
+    def __init__(self, username, email, password):
         '''
         Function to save user credentials
         '''
         self.username = username
+        self.email = email
         self.password = password
 
     def save_user(self):

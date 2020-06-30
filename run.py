@@ -3,11 +3,11 @@ from user import User
 import random
 
 # Create account
-def create_useraccount(username, password):
+def create_useraccount(username, email, password):
     """
     Function to create a new account
     """
-    new_user = User(username, password)
+    new_user = User(username, email, password)
     return new_user
 
 def save_user(user):
@@ -67,14 +67,17 @@ def main():
             print("Key in your details: ")
             print("Username: ")
             Username = input()
+            print('\n')
+            print("email")
+            email = input()
 
             print("Input password: ")
             password = input()
             
-            save_user(create_useraccount(Username, password))
+            save_user(create_useraccount(Username, email, password))
             print('\n')
             print(f"{name}  Acc Info:")
-            print(f"username : {Username} , Password: {password}")
+            print(f"username : {Username} , email: {email} , password: {password}")
             print('\n')
             print(f"You have successfully logged in. Welcome {Username}!")
             print ('\n')

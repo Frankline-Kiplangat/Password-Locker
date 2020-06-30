@@ -7,7 +7,7 @@ class TestUser(unittest.TestCase):
         """
         Function to run before each test
         """
-        self.new_user=User("Frankline-Kiplangat", "frankdux@1234")
+        self.new_user=User("Frankline-Kiplangat", "kipfrankline@gmail.com", "frankdux@1234")
 
     def tearDown(self):
         '''
@@ -22,6 +22,7 @@ class TestUser(unittest.TestCase):
         check if class is initialiazing as expected
         '''
         self.assertEqual(self.new_user.username, "Frankline-Kiplangat")
+        self.assertEqual(self.new_user.email, "kipfrankline@gmail.com")
         self.assertEqual(self.new_user.password, "frankdux@1234")
 
 
@@ -41,7 +42,7 @@ class TestUser(unittest.TestCase):
         Function to check whether you can store more than one account
         '''
         self.new_user.save_user()
-        test_user = User("test", "password")
+        test_user = User("test", "kipfrankline@gmail.com", "password")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
 
@@ -52,7 +53,7 @@ class TestUser(unittest.TestCase):
         checking whether one can delete an account
         '''
         self.new_user.save_user()
-        test_user = User("test", "password")
+        test_user = User("test", "kipfrankline@gmail.com", "password")
         test_user.save_user()
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list), 1)
@@ -62,7 +63,7 @@ class TestUser(unittest.TestCase):
         search a user with username
         '''
         self.new_user.save_user()
-        test_user = User("test", "password")
+        test_user = User("test", "kipfrankline@gmail.com", "password")
         test_user.save_user()
         found_user = User.search_user("Frankline-Kiplangat")
         self.assertEqual(found_user.username, self.new_user.username)
