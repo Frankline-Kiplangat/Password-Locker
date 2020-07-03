@@ -66,4 +66,3 @@ class UserCredentials:
     def copy_password(cls, password):
             search_account = UserCredentials.search_account(password)
             pyperclip.copy(search_account.password)
-

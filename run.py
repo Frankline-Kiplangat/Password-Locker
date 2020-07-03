@@ -52,10 +52,11 @@ def delete_userCred(account):
     account.delete_userCred()
 
 def main():
+    print("*" * 50)
     print("Hey There! Welcome. Enter your name: ")
     name = input ()
     print(f"{name}, Sign up to continue")
-    print('\n')
+    print("*" * 70)
     print ('\n')
     print("Use the short codes : 'su' to Sign Up, 'li' to Log In, 'ex' to Exit ")
     
@@ -86,6 +87,8 @@ def main():
             print("Use these codes: 'ca' to Create a new Account, 'da' to Display Account, 'fa' to search Account, 'gp' to Generate a Password, 'ex' to exit")
             print ('\n')
 
+ 
+
         elif short_code == "ca":
             print("Enter your account details: ")
             print("Account Name: ")
@@ -100,9 +103,11 @@ def main():
                 print("How long would you like your password to be? ")
                 print(f"p.s: Maximum length of your password is {how_many}")
                 lent = int(input())
+                
                 password = "" .join(random.sample(letters, lent))
                 print(f"Your password has {lent} characters ")
                 print(password)
+                
                 save_userCredentials(create_userCredentials(account, email, password))
                 print("UserCredentials saved! Enter 'da' to see your account")
                 print ('\n')
