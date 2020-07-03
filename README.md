@@ -7,10 +7,10 @@
 
 ## User Stories
 Users can do the following with this App
-*Create an account with their details (Username and password)
+* Create an account with their details (Username and password)
 * Store existing log in credentials
 * Generate a password for a new account. 
-* View various account credentials and passwords in their passwords in the application.
+* View various account credentials and passwords in their      passwords in the application.
 * Delete a credential account they no longer need in the application. 
 
 ## BehaviUor Driven Development
@@ -18,7 +18,7 @@ Users can do the following with this App
   | BEHAVIOUR                | INPUT                     | OUTPUT                             |
   | ----------------------|:--------------------------:|:---------------------------------:|
   | Action required      | User types  | Application performs the action    |
-  | 
+  
 
 
 ## Installation Requirements
